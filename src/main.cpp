@@ -1,10 +1,12 @@
 #include <iostream>
+#include <chrono>
+#include <vector>
 
 #include "ContactManager.hpp"
 #include "ExpenseManager.hpp"
 
 int main(){
-    // create a contact 
+    // create a contact
     ContactManager::addContact(
         "John Doe",
         "john.doe@example.com",
@@ -18,6 +20,10 @@ int main(){
         "9370289157",
         {"self","myNum"}
     );
+
+    auto now = std::chrono::system_clock::now();
+
+    ExpenseManager::addExpense("MIT Academy of Engineering");
 
     // display the contacts
     std::vector<Contact> contacts = ContactManager::getContacts();

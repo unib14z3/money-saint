@@ -6,6 +6,8 @@ add_executable(money_saint
 	src/main.cpp
 	src/Contact/Contact.cpp
 	src/Contact/ContactManager.cpp
+	src/Expense/Expense.cpp
+	src/Expense/ExpenseManager.cpp
 )
 
 target_compile_features(money_saint PRIVATE cxx_std_20)
