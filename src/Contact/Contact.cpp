@@ -1,10 +1,10 @@
-#include <iostream>
 #include <string>
 #include <vector>
 
 #include "Contact.hpp"
 
 Contact::Contact(
+    utils::ids::ContactID i,
     std::string n,
     std::string e,
     std::string m
@@ -16,6 +16,7 @@ Contact::Contact(
 }
 
 Contact::Contact(
+    utils::ids::ContactID i,
     std::string n,
     std::string e,
     std::string m,

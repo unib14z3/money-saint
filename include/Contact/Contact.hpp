@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 
+#include "Utils/Utils.hpp"
 
 class Contact{
 private:
@@ -17,8 +18,20 @@ private:
     Details details;
 
 public:
-    Contact( std::string n, std::string e, std::string m);
-    Contact( std::string n, std::string e, std::string m, std::vector<std::string> tags);
+    Contact(
+        utils::ids::ContactID i,
+        std::string n,
+        std::string e,
+        std::string m
+    );
+
+    Contact(
+        utils::ids::ContactID i,
+        std::string n,
+        std::string e,
+        std::string m,
+        std::vector<std::string> tags
+    );
     Contact(const Contact::Details& ctx);
     ~Contact();
 
@@ -31,4 +44,3 @@ public:
     std::string getMobileNumber() const;
     std::vector<std::string> getTags() const;
 };
-
