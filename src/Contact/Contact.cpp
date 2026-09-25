@@ -37,6 +37,22 @@ void Contact::set(const Contact::Details& ctx){
     details = ctx;
 }
 
- unsigned int Contact::getId() const{
+unsigned int Contact::getId() const{
     return details.id;
+}
+
+std::string Contact::getName() const{
+    return details.name;
+}
+
+std::string Contact::getEmail() const{
+    return details.email;
+}
+
+std::string Contact::getMobileNumber() const{
+    return details.mobileNumber;
+}
+
+std::vector<std::string> Contact::getTags() const{
+    return details.tags;
 }

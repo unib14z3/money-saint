@@ -5,24 +5,27 @@
 
 #include "Contact.hpp"
 
-class  ContactManager{
-    private:
-        std::vector<Contact> contacts;
+namespace {
+    std::vector<Contact> contacts;
+}
+
+namespace  ContactManager{
+    std::vector<Contact> getContacts();
+
+    void addContact(
+        std::string name, 
+        std::string email, 
+        std::string mobileNumber, 
+        std::vector<std::string> tags
+    );
     
-    public: 
-        std::vector<Contact> getContacts();
-
-        void addContact(const Contact::Details& ctx);
-
-        void addContact(
-            std::string name, 
-            std::string email, 
-            std::string mobileNumber, 
-            std::vector<std::string> tags);
-
-        void updateContact(const Contact::Details& ctx);
-        void removeContact();
-
-        void saveContacts();
-        void loadContacts();
+    void updateContactDetail(
+        unsigned int id,
+        std::string field, 
+        std::string value
+    );
+    
+    void removeContact(unsigned int id);
+    void saveContacts();
+    void loadContacts();
 };

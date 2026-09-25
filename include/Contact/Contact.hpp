@@ -23,8 +23,12 @@ public:
     ~Contact();
 
     void set(const Contact::Details& ctx);
-    unsigned int getId() const;
 
-    friend class ContactManager;
+    // Details getDetails() const;
+    unsigned int getId() const;
+    std::string getName() const;
+    std::string getEmail() const;
+    std::string getMobileNumber() const;
+    std::vector<std::string> getTags() const;
 };
 
