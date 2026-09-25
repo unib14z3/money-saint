@@ -6,13 +6,18 @@
 
 int main(){
     // create a contact 
-    ContactCtx ctx;
-    ctx.id = 1;
-    ctx.name = "John Doe";
-    ctx.email = "john.doe@example.com";
-    ctx.mobileNumber = "123-456-7890";
-    ctx.tags = {"friend", "colleague"};
+    ContactManager cM;
+    cM.addContact(
+        "John Doe",
+        "john.doe@example.com",
+        "123-456-7890",
+        {"friend", "colleague"}
+    );
 
-    Contact contact(ctx);
-    std::cout << "Contact ID: " << contact.getId() << std::endl;
+    // display the contacts
+    std::vector<Contact> contacts = cM.getContacts();
+    for (const Contact& contact : contacts) {
+        std::cout << "Contact ID: " << contact.getId() << std::endl;
+    }
+
 }
